@@ -1,0 +1,15 @@
+{
+  "name": "cisc260",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+  "start": "ts-node HW1/convert.ts"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.4"
+  }
+}
