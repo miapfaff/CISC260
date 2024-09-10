@@ -56,7 +56,35 @@ function toBinaryAndHex(num: number): { binary: string, hex: string } {   // ret
 }
 
 // Example usage
-const num = 11;  // You can change this to any number
+const num = -33;  // You can change this to any number
 const result = toBinaryAndHex(num);
 console.log(`Binary: ${result.binary}`);
 console.log(`Hexadecimal: ${result.hex}`);
+
+
+
+// --------------------------------------  START OF PROGRAM 2  -------------------------------------------------
+
+
+function hexToDecimal(hexStr: string): number {
+    // Dictionary to map hex characters to decimal values
+    const hexToDec: { [key: string]: number } = {
+        '0': 0, '1': 1, '2': 2, '3': 3, '4': 4, '5': 5, '6': 6, '7': 7,
+        '8': 8, '9': 9, 'A': 10, 'B': 11, 'C': 12, 'D': 13, 'E': 14, 'F': 15
+    };
+
+    let decimalValue = 0;
+
+    // Iterate over the hex string
+    for (let i = 0; i < hexStr.length; i++) {
+        const char = hexStr[i].toUpperCase();
+        decimalValue = decimalValue * 16 + hexToDec[char];
+    }
+
+    return decimalValue;
+}
+
+
+//const hexStr = prompt("Enter a 32-bit hexadecimal string:") || '0';
+const decimalValue = hexToDecimal('0000001F');
+console.log(`Decimal: ${decimalValue}`);
