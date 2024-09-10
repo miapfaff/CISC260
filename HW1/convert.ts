@@ -1,4 +1,3 @@
-// Array of hexadecimal digits
 const digits: string[] = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'];
 
 // Function to convert decimal to binary string (positive only)
@@ -60,7 +59,12 @@ const num = -33;  // You can change this to any number
 const result = toBinaryAndHex(num);
 console.log(`Binary: ${result.binary}`);
 console.log(`Hexadecimal: ${result.hex}`);
+const promptSync1 = require('prompt-sync')();
 
+// Get user input
+const str1: string = promptSync1("Enter a base 10 number: ") || '0';
+
+console.log(`Binary: ${result.binary} and to Hex is: ${result.hex}`);
 
 
 // --------------------------------------  START OF PROGRAM 2  -------------------------------------------------
@@ -72,7 +76,8 @@ function hexToDecimal(hexStr: string): number {
         '0': 0, '1': 1, '2': 2, '3': 3, '4': 4, '5': 5, '6': 6, '7': 7,
         '8': 8, '9': 9, 'A': 10, 'B': 11, 'C': 12, 'D': 13, 'E': 14, 'F': 15
     };
-
+    hexStr = hexStr.trim().toUpperCase();
+    
     let decimalValue = 0;
 
     // Iterate over the hex string
@@ -84,7 +89,9 @@ function hexToDecimal(hexStr: string): number {
     return decimalValue;
 }
 
+const promptSync = require('prompt-sync')();
 
-//const hexStr = prompt("Enter a 32-bit hexadecimal string:") || '0';
-const decimalValue = hexToDecimal('0000001F');
-console.log(`Decimal: ${decimalValue}`);
+// Get user input
+const hexStr: string = promptSync("Enter a 32-bit hexadecimal number: ") || '0';
+const decimalValue = hexToDecimal(hexStr);
+console.log(`Hexadecimal ${hexStr} converted to Decimal is: ${decimalValue}`);
